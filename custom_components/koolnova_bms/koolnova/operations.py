@@ -6,7 +6,7 @@ import logging as log
 import asyncio
 
 from pymodbus import pymodbus_apply_logging_config
-from pymodbus.client import AsyncModbusSerialClient as ModbusClient
+from pymodbus.client import AsyncModbusTcpClient as ModbusClient
 from pymodbus.exceptions import ModbusException
 from pymodbus.pdu import ExceptionResponse
 from pymodbus.transaction import ModbusRtuFramer
@@ -18,8 +18,9 @@ _LOGGER = log.getLogger(__name__)
 class Operations:
     ''' koolnova BMS Modbus operations class '''
 
-    def __init__(self, port:str, timeout:int, debug:bool=False) -> None:
+    def __init__(self, host:str, port:str, timeout:int, debug:bool=False) -> None:
         ''' Class constructor '''
+        self._host = host
         self._port = port
         self._timeout = timeout
         self._addr = const.DEFAULT_ADDR
@@ -27,16 +28,19 @@ class Operations:
         self._parity = const.DEFAULT_PARITY
         self._bytesize = const.DEFAULT_BYTESIZE
         self._stopbits = const.DEFAULT_STOPBITS
-        self._client = ModbusClient(port=self._port,
-                                    baudrate=self._baudrate,
-                                    parity=self._parity,
-                                    stopbits=self._stopbits,
-                                    bytesize=self._bytesize,
-                                    timeout=self._timeout)
+        self._client = ModbusClient(host=self._host,
+                                    port=self._port,
+                                    # baudrate=self._baudrate,
+                                    # parity=self._parity,
+                                    # stopbits=self._stopbits,
+                                    # bytesize=self._bytesize,
+                                    # timeout=self._timeout
+                                    )
         if debug:
             pymodbus_apply_logging_config("DEBUG")
 
     def __init__(self, 
+                    host:str="",
                     port:str="",
                     addr:int=const.DEFAULT_ADDR,
                     baudrate:int=const.DEFAULT_BAUDRATE,
@@ -46,6 +50,7 @@ class Operations:
                     timeout:int=1,
                     debug:bool=False) -> None:
         ''' Class constructor '''
+        self._host = host
         self._port = port
         self._addr = addr
         self._timeout = timeout
@@ -53,12 +58,14 @@ class Operations:
         self._parity = parity
         self._bytesize = bytesize
         self._stopbits = stopbits
-        self._client = ModbusClient(port=self._port,
-                                    baudrate=self._baudrate,
-                                    parity=self._parity,
-                                    stopbits=self._stopbits,
-                                    bytesize=self._bytesize,
-                                    timeout=self._timeout)
+        self._client = ModbusClient(host=self._host,
+                                    port=self._port,
+                                    # baudrate=self._baudrate,
+                                    # parity=self._parity,
+                                    # stopbits=self._stopbits,
+                                    # bytesize=self._bytesize,
+                                    # timeout=self._timeout
+                                    )
         if debug:
             pymodbus_apply_logging_config("DEBUG")
 

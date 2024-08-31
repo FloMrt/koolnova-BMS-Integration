@@ -221,6 +221,7 @@ class Koolnova:
 
     def __init__(self,
                     name:str = "",
+                    host:str = "",
                     port:str = "",
                     addr:int = const.DEFAULT_ADDR,
                     baudrate:int = const.DEFAULT_BAUDRATE,
@@ -229,7 +230,8 @@ class Koolnova:
                     stopbits:int = const.DEFAULT_STOPBITS,
                     timeout:int = 1) -> None:
         ''' Class constructor '''
-        self._client = Operations(port=port,
+        self._client = Operations(host=host,
+                                    port=port,
                                     addr=addr,
                                     baudrate=baudrate,
                                     parity=parity,
