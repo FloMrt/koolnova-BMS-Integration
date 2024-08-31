@@ -1,10 +1,5 @@
 # koolnova-BMS-Integration
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=for-the-badge)](https://github.com/hacs/integration)
-[![License](https://img.shields.io/github/license/sinseman44/koolnova-BMS-Integration?style=for-the-badge)](https://github.com/sinseman44/koolnova-BMS-Integration/blob/main/LICENSE)
-[![Latest Release](https://img.shields.io/github/v/release/sinseman44/koolnova-BMS-Integration?style=for-the-badge)](https://github.com/sinseman44/koolnova-BMS-Integration/releases)
-<br />
-
 ![intro](png/areas_controls.png)
 
 _Disclaimer : This is not a Koolnova official integration and use at your own risk._
@@ -34,20 +29,13 @@ Modbus over Serial Line has two transmission modes RTU and ASCII which are corre
 
 Modbus RTU (Remote Terminal Unit), makes use of a compact, binary representation of the data for protocol communication. The RTU format follows the commands/data with a cyclic redundancy check checksum as an error check mecahnism to ensure the reliability of data.
 
-# Support
-
-<a href="https://www.buymeacoffee.com/sinseman44" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 145px !important;" ></a>
-
-# Todo 📃 and Bug report 🐞
-
-See [Github To Do & Bug List](https://github.com/sinseman44/koolnova-BMS-Integration/issues)
 
 # Getting Started
 
 ## Requirements
 
-* An installation of Home Assistant with free USB port.
-* A RS485 USB dongle (Example: DSD Tech SH-U11).
+* An installation of Home Assistant connected to the same wifi as the dongle.
+* A RS485 TCP dongle (Example: Elfin EW11).
 * A Koolnova air conditioning system (identifier: 100-CPNR00 or 100-CPND00) with areas defined.
 * Enabling Modbus communication on the master radio thermostat (INT 49).
 
@@ -73,10 +61,10 @@ See [Github To Do & Bug List](https://github.com/sinseman44/koolnova-BMS-Integra
 
 ## Installation
 
-Install using HACS In HACS go to the three dots int the upper right corner choose add custom repository and add https://github.com/sinseman44/koolnova-BMS-Integration to the list.<br />
+Install using HACS In HACS go to the three dots int the upper right corner choose add custom repository and add https://github.com/FloMrt/koolnova-BMS-Integration to the list.<br />
 Install manually Clone or copy this repository and copy the folder `custom_components/koolnova_bms` into `/custom_components/koolnova_bms`.<br />
 
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=sinseman44&repository=koolnova-BMS-Integration&category=integration)
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=FloMrt&repository=koolnova-BMS-Integration&category=integration)
 [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=koolnova_bms)
 
 ## Home Assistant USB dongle recognition
