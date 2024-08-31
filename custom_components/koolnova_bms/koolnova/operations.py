@@ -29,7 +29,7 @@ class Operations:
         self._bytesize = const.DEFAULT_BYTESIZE
         self._stopbits = const.DEFAULT_STOPBITS
         self._client = ModbusClient(host=self._host,
-                                    port=self._port,
+                                    port=self._port
                                     # baudrate=self._baudrate,
                                     # parity=self._parity,
                                     # stopbits=self._stopbits,
@@ -59,7 +59,7 @@ class Operations:
         self._bytesize = bytesize
         self._stopbits = stopbits
         self._client = ModbusClient(host=self._host,
-                                    port=self._port,
+                                    port=self._port
                                     # baudrate=self._baudrate,
                                     # parity=self._parity,
                                     # stopbits=self._stopbits,

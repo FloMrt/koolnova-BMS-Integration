@@ -45,7 +45,8 @@ class TestVBE4ConfigFlow(ConfigFlow, domain=DOMAIN):
         user_form = vol.Schema( #pylint: disable=invalid-name
             {
                 vol.Required("Name", default="koolnova"): vol.Coerce(str),
-                vol.Required("Device", default="/dev/ttyUSB0"): vol.Coerce(str),
+                vol.Required("Host", default="192.168.1.54"): vol.Coerce(str),
+                vol.Required("Port", default="8899"): vol.Coerce(str),
                 vol.Required("Address", default=DEFAULT_ADDR): vol.Coerce(int),
                 vol.Required("Baudrate", default=str(DEFAULT_BAUDRATE)): vol.In(["9600", "19200"]),
                 vol.Required("Sizebyte", default=DEFAULT_BYTESIZE): vol.Coerce(int),
@@ -61,7 +62,8 @@ class TestVBE4ConfigFlow(ConfigFlow, domain=DOMAIN):
             # Second call; On memorise les données dans le dictionnaire
             self._user_inputs.update(user_input)
 
-            self._conn = Operations(port=self._user_inputs["Device"],
+            self._conn = Operations(host=self._user_inputs["Host"],
+                                    port=self._user_inputs["Port"],
                                     addr=self._user_inputs["Address"],
                                     baudrate=int(self._user_inputs["Baudrate"]),
                                     parity=self._user_inputs["Parity"][0],

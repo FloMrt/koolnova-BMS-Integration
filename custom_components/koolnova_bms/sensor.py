@@ -51,7 +51,7 @@ async def async_setup_entry(hass: HomeAssistant,
     device = hass.data[DOMAIN]["device"]
     coordinator = hass.data[DOMAIN]["coordinator"]
     entities = [
-        DiagnosticsSensor(device, "Device", entry.data),
+        DiagnosticsSensor(device, "Port", entry.data),
         DiagnosticsSensor(device, "Address", entry.data),
         DiagModbusSensor(device, entry.data),
     ]

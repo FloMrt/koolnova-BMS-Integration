@@ -9,7 +9,7 @@
                 "data": {
                     "Name": "Nome del dispositivo",
                     "Host": "Host",
-                    "Device": "Dispositivo di comunicazione RS485 Modbus",
+                    "Port": "Dongle port",
                     "Address": "Indirizzo del dispositivo",
                     "Baudrate": "Velocità Modbus",
                     "Sizebyte": "Dimensione dei dati",

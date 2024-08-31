@@ -28,7 +28,7 @@ async def async_setup_entry(hass: HomeAssistant,
     bytesize: int = entry.data['Sizebyte']
     stopbits: int = entry.data['Stopbits']
     timeout: int = entry.data['Timeout']
-    _LOGGER.debug("name:{} - host:{} - - port:{} - addr:{} - baudrate:{} - parity: {} - bytesize:{} - stopbits:{} - timeout:{}".format(name,
+    _LOGGER.debug("name:{} - host:{} - port:{} - addr:{} - baudrate:{} - parity: {} - bytesize:{} - stopbits:{} - timeout:{}".format(name,
                                                                                                                         host,
                                                                                                                         port,
                                                                                                                         addr,
