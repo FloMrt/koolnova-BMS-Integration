@@ -20,6 +20,7 @@ async def async_setup_entry(hass: HomeAssistant,
     hass.data.setdefault(DOMAIN, {})
     
     name: str = entry.data['Name']
+    host: str = entry.data['Host']
     port: str = entry.data['Device']
     addr: int = entry.data['Address']
     baudrate: int = entry.data['Baudrate']
@@ -27,7 +28,8 @@ async def async_setup_entry(hass: HomeAssistant,
     bytesize: int = entry.data['Sizebyte']
     stopbits: int = entry.data['Stopbits']
     timeout: int = entry.data['Timeout']
-    _LOGGER.debug("name:{} - port:{} - addr:{} - baudrate:{} - parity: {} - bytesize:{} - stopbits:{} - timeout:{}".format(name,
+    _LOGGER.debug("name:{} - host:{} - - port:{} - addr:{} - baudrate:{} - parity: {} - bytesize:{} - stopbits:{} - timeout:{}".format(name,
+                                                                                                                        host,
                                                                                                                         port,
                                                                                                                         addr,
                                                                                                                         baudrate,
@@ -36,7 +38,7 @@ async def async_setup_entry(hass: HomeAssistant,
                                                                                                                         stopbits,
                                                                                                                         timeout))
     try:
-        device = Koolnova(name, port, addr, baudrate, parity, bytesize, stopbits, timeout)
+        device = Koolnova(name, host, port, addr, baudrate, parity, bytesize, stopbits, timeout)
         # connect to modbus client
         ret = await device.async_connect()
         if not ret:

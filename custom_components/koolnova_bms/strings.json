@@ -8,6 +8,7 @@
                 "description": "Informations de connexion sur le système Koolnova",
                 "data": {
                     "Name": "Name",
+                    "Host": "Host",
                     "Device": "Device",
                     "Address": "Address",
                     "Baudrate": "Baudrate",
