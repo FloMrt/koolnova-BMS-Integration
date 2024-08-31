@@ -8,6 +8,7 @@
                 "description": "Informations de connexion sur le périphérique Koolnova",
                 "data": {
                     "Name": "Nom de l'appareil",
+                    "Host": "IP de l'appareil",
                     "Device": "Appareil de communication RS485 Modbus",
                     "Address": "Adresse du périphérique",
                     "Baudrate": "Vitesse modbus",
