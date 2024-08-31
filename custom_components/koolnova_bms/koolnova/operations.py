@@ -131,7 +131,7 @@ class Operations:
             return False
 
         if isinstance(rq, ExceptionResponse):
-            _LOGGER.error("Received modbus exception ({})".format(rr))
+            _LOGGER.error("Received modbus exception ({})".format(rq))
             return False
         return ret 
 
