@@ -9,7 +9,7 @@
                 "data": {
                     "Name": "Name",
                     "Host": "Host",
-                    "Device": "Device",
+                    "Port": "Port",
                     "Address": "Address",
                     "Baudrate": "Baudrate",
                     "Sizebyte": "Sizebyte",
