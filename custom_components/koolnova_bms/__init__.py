@@ -21,7 +21,7 @@ async def async_setup_entry(hass: HomeAssistant,
     
     name: str = entry.data['Name']
     host: str = entry.data['Host']
-    port: str = entry.data['Device']
+    port: str = entry.data['Port']
     addr: int = entry.data['Address']
     baudrate: int = entry.data['Baudrate']
     parity: str = entry.data['Parity'][0]
